@@ -1,0 +1,20 @@
+.Homepage{
+    width: 60%;
+    height: 60vh;
+    position: relative;
+    left: 20vw;
+    top: 12.5vh;
+    background-image: url(/assets/naturalimg3);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h3{
+    text-shadow: 2px 2px 8px #00ffb3;
+}
+.seconddiv{
+    
+    height: 50vh;
+    width: 80%;
+    position: relative;
+    left: 6vw;
+}

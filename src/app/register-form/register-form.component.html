@@ -1,0 +1,71 @@
+<body>
+    <h3 class="text-center fw-bold display-4">Register-Form</h3>    
+    <div class="secondbox">
+        <form #regf="ngForm" (ngSubmit)="Regforme()" action="">
+            <div class="fw-bold fs-5 mx-auto ">
+                <div class="row">
+                  <!--Name-->
+                    <div class="col-sm-6 mb-1" >
+                        <label for="Name" class="col-sm-3 col-form-label fw-bold fs-4">Name</label>
+                            <div >
+                            <input #Name="ngModel"  [(ngModel)]="regform.Name" type="text"  maxlength="15" required class="form-control" name="Name" placeholder="Please Enter Name">
+                            <small class="text-danger" *ngIf="Name.invalid && (Name.dirty || Name.touched)">Please enter name</small>
+                        </div>
+                        <!--Email-->
+                    </div>
+                    <div class="col-sm-6 mb-1">
+                      <label for="Email" class="col-sm-3 col-form-label mt-1">Email</label>
+                        <div class="d-flex">
+                          <input #Email="ngModel" [(ngModel)]="regform.Email" email type="text"  required class="form-control" name="Email" placeholder="Please Enter Gmail">
+                        </div> 
+                          <small class="text-danger" *ngIf="Email.invalid && (Email.dirty || Email.touched)">Please enter Emailid</small>
+                    </div>
+                  </div>
+                  <div class="row"> 
+                    <!--Phonenumber-->                  
+                    <div class="col-sm-6 mb-1">
+                      <label for="Mobilenumber" class="col-sm-3 col-form-label">Mobilenumber</label>
+                        <div>
+                         <input #Phoneno="ngModel" [(ngModel)]="regform.Phoneno" type="tel" required class="form-control" maxlength="13" name="Phoneno" placeholder="Please Enter Mobilenumber">
+                        </div> 
+                      <small class="text-danger" *ngIf="Phoneno.invalid && (Phoneno.dirty || Phoneno.touched)">Please enter Phoneno</small>      
+                   </div>
+                   <!--Date Of Birth-->
+                   <div class="col-sm-6 mb-1">
+                    <label for="Dateofbirth" class="col-sm-3 col-form-label">DateOfBirth</label>
+                     <div class="">
+                       <input #DOB="ngModel" [(ngModel)]="regform.DOB"  type="date" required class="form-control" name="DOB" placeholder="Please Enter DOB">
+                     </div>
+                     <small class="text-danger" *ngIf="DOB.invalid && (DOB.dirty || DOB.touched)">Please enter DOB</small>
+                 </div>                   
+               </div>
+               <div class="row">
+                 <!--Password-->
+                   <div class="col-sm-6 mb-1">
+                      <label  for="Password" class="col-sm-3 col-form-label">Password</label>
+                         <div class="d-flex">
+                           <input #Password="ngModel"  [(ngModel)]="regform.Password" type="password" required minlength="5" class="form-control" name="Password" placeholder="Please Enter password">
+                         </div>
+                         <small class="text-danger" *ngIf="Password.invalid && (Password.dirty || Password.touched)">Please enter Password</small>
+                    </div>
+                    <!--ConformPassword-->
+                    <div class="col-sm-6 mb-1">
+                      <label for="ConfirmPassword" class="col-sm-3 col-form-label">ConfirmPassword</label>
+                        <div class="d-flex">
+                          <input #ConformPassword="ngModel" [(ngModel)]="regform.ConformPassword" type="password"  required minlength="5" class="form-control" name="ConformPassword" placeholder="Please Enter Confirmpassword">
+                        </div>
+                        <small class="text-danger" *ngIf="ConformPassword.invalid && (ConformPassword.dirty || ConformPassword.touched)">Please enter ConformPassword</small>
+                    </div>
+                </div>
+                <!--Submitbutton-->
+                <div class="d-flex justify-content-center mt-5">
+                    <button [disabled]="regf.invalid" type="submit" class="btn btn-primary col-4"  value="submit"> Submit</button>                  
+                </div>
+                <div class="text-end">
+                    <a class="fst-italic text-decoration-none text-success" routerLink="/log-in-form">Click here to login page</a> 
+
+                </div>
+               </div>
+        </form>   
+    </div>
+</body>
